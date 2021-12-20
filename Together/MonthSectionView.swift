@@ -13,7 +13,10 @@ struct MonthSectionView: View {
         VStack {
             HStack {
                 Text(month)
-                    .padding(.leading, 15)
+                    .fontWeight(.medium)
+                    .font(.system(size: 14))
+                    .foregroundColor(Color.black.opacity(0.6))
+                    .padding(.leading, 18)
                     .padding(.top, 5)
                 Spacer()
             }

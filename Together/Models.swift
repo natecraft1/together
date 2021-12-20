@@ -69,20 +69,33 @@ extension MonthSection {
 
 struct Post: Identifiable, Hashable {
     var id = UUID()
-    var title = "Post"
+    var title: String?
+    var text: String?
     var date: Date
-    var images: [String] {
-        (1...10).map { $0 }.shuffled().prefix(Int.random(in: 2...4)).map(String.init)
-    }
+    var images: [String]
 }
 
 extension Post {
     static func createModels(n: Int = 10) -> [Post] {
+        var postTitles = ["Levi Pics", "First smile", "Levi's Birth Story", "Family day out", "Weekend Hike", "Trip to Florida", "Baby Steps"]
+        var loremIpsum = [
+            "I'm baby meh celiac authentic wolf flannel fingerstache artisan typewriter letterpress tbh VHS. Waistcoat offal messenger bag selfies. Banjo cardigan gluten-free, umami +1 fingerstache fashion axe. Woke dreamcatcher vexillologist health goth vice.",
+            "Crucifix church-key kogi quinoa, twee ugh palo santo ennui distillery. Dreamcatcher echo park sartorial, vice man braid chicharrones raw denim succulents paleo keffiyeh single-origin coffee master cleanse.",
+            "Helvetica shaman 90's williamsburg tousled, post-ironic austin pabst. Four loko intelligentsia drinking vinegar craft beer. Pitchfork thundercats edison bulb lumbersexual church-key af master cleanse.",
+            "Kale chips fixie DIY street art tbh affogato asymmetrical aesthetic waistcoat cloud bread. Church-key kale chips neutra celiac art party.",
+            "Adaptogen brooklyn meh, locavore four loko schlitz thundercats coloring book four dollar toast truffaut selvage gluten-free food truck. Green juice aesthetic paleo etsy post-ironic truffaut tofu."
+        ]
         var d = Date()
-        return (0..<n).map { _ -> Post in
-            let date = d.adjust(.day, offset: Int.random(in: -35 ..< 1))
+        return (0..<n).map { num -> Post in
+            let date = d.adjust(.day, offset: Int.random(in: -35 ..< 1)).adjust(.minute, offset: Int.random(in: -200...200))
             d = date
-            return Post(date: date)
+            let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
+            let text = !loremIpsum.isEmpty && num % 3 == 0 ? loremIpsum.removeFirst() : nil
+            let minImages = text == nil ? 3 : 0
+            let maxImages = text != nil ? 2 : 4
+            let images: [String] = (1...10).map { $0 }.shuffled().prefix(Int.random(in: minImages...maxImages)).map(String.init)
+           
+            return Post(title: title, text: text, date: date, images: images)
         }
     }
 }

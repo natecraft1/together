@@ -12,8 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            Story().tabItem {
-                Text("Story")
+            NavigationView {
+                Story().tabItem {
+                    Text("Story")
+                }
+                .navigationBarTitle("Glass Family")
             }
         }
     }
