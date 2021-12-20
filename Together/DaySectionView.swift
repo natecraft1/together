@@ -15,6 +15,7 @@ struct DaySectionView: View {
                 Circle()
                     .stroke(Color.purple.opacity(0.6), lineWidth: 1)
                 Text(day)
+                    .fontWeight(.medium)
                     .font(.system(size: 12))
             }.frame(width: 30, height: 30, alignment: .center)
             Spacer()

@@ -16,14 +16,11 @@ struct Story: View {
                 ForEach(monthOfPosts) { month in
                     MonthSectionView(month: month.monthAbbreviation)
                     ForEach(month.days) { day in
-                        HStack {
-                            DaySectionView(day: day.dayAbbreviation)
-                                .padding(.leading, 16)
-                            Spacer()
-                        }
+                        DaySectionView(day: day.dayAbbreviation)
+                            .padding(.leading, 16)
                         ForEach(day.posts) { post in
                             PostView(post: post)
-                                .frame(height: 100)
+                                .frame(height: 120)
                         }
                     }
                 }

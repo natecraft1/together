@@ -19,7 +19,7 @@ struct MonthSectionView: View {
             }
             Rectangle()
                 .size(width: 1, height: 10)
-                .fill(Color.gray.opacity(0.4))
+                .fill(Color.purple.opacity(0.4))
                 .padding(.leading, 30)
         }
         

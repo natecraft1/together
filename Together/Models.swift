@@ -69,8 +69,11 @@ extension MonthSection {
 
 struct Post: Identifiable, Hashable {
     var id = UUID()
+    var title = "Post"
     var date: Date
-    var images: [String] = ["1"]
+    var images: [String] {
+        (1...10).map { $0 }.shuffled().prefix(Int.random(in: 2...4)).map(String.init)
+    }
 }
 
 extension Post {

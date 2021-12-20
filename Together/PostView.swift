@@ -13,15 +13,26 @@ struct PostView: View {
     var body: some View {
         HStack {
             Rectangle()
-                .size(width: 1, height: 100)
-                .fill(Color.gray.opacity(0.6))
+                .size(width: 1, height: 120)
+                .fill(Color.purple.opacity(0.4))
                 .padding(.leading, 30)
-//                .ignoresSafeArea(.all)
-            Image(post.images.first!)
-                .resizable()
-                .scaledToFit()
-                .frame(width: nil, height: 80, alignment: .center)
-                .cornerRadius(6)
+                .padding(.trailing, 0)
+                .frame(width: 30, height: 120)
+            Spacer().frame(width: 20, height: nil, alignment: .center)
+            VStack(alignment: .leading) {
+                Text(post.title)
+                    .padding(.leading, 3)
+                HStack {
+                    ForEach(Array(zip(post.images.indices, post.images)), id: \.0) { index, image in
+                        Image(image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: nil, height: 80, alignment: .center)
+                            .cornerRadius(6)
+                            .offset(x: CGFloat(-10 * index), y: 3 * (index % 2 == 0 ? -1 : 1))
+                    }
+                }
+            }
             Spacer()
         }
     }
