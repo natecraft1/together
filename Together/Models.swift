@@ -6,6 +6,7 @@
 //
 import DateHelper
 import Foundation
+import SwiftUI
 
 struct MonthYear: Hashable {
     var month: Int
@@ -69,6 +70,7 @@ extension MonthSection {
 struct Post: Identifiable, Hashable {
     var id = UUID()
     var date: Date
+    var images: [String] = ["1"]
 }
 
 extension Post {

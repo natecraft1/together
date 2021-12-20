@@ -13,11 +13,9 @@ struct DaySectionView: View {
         HStack {
             ZStack {
                 Circle()
-                    .stroke(Color.red, lineWidth: 1)
-//                    .padding(6)
+                    .stroke(Color.purple.opacity(0.6), lineWidth: 1)
                 Text(day)
                     .font(.system(size: 12))
-//                    .padding(10)
             }.frame(width: 30, height: 30, alignment: .center)
             Spacer()
         }

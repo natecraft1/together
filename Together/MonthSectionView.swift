@@ -17,13 +17,12 @@ struct MonthSectionView: View {
                     .padding(.top, 5)
                 Spacer()
             }
-//            Rectangle()
-//                .size(width: 1, height: 10)
-//                .fill(Color.red)
-//                .padding(.leading, 30)
-//                .edgesIgnoringSafeArea(.bottom)
+            Rectangle()
+                .size(width: 1, height: 10)
+                .fill(Color.gray.opacity(0.4))
+                .padding(.leading, 30)
         }
-        Spacer()
+        
     }
 }
 
