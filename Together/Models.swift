@@ -91,9 +91,7 @@ extension Post {
             d = date
             let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
             let text = !loremIpsum.isEmpty && num % 3 == 0 ? loremIpsum.removeFirst() : nil
-            let minImages = text == nil ? 3 : 0
-            let maxImages = text != nil ? 2 : 4
-            let images: [String] = (1...10).map { $0 }.shuffled().prefix(Int.random(in: minImages...maxImages)).map(String.init)
+            let images: [String] = (1...10).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
            
             return Post(title: title, text: text, date: date, images: images)
         }
