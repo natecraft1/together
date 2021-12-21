@@ -21,7 +21,6 @@ struct MonthDay: Hashable {
 struct MonthSection: Identifiable {
     var id = UUID()
     var monthAbbreviation: String
-//    var posts: [Post]
     var days: [DaySection]
 }
 
@@ -43,9 +42,9 @@ extension MonthSection {
             (my, posts)
         }.sorted(by: { pair1, pair2 in
             if pair1.0.year == pair2.0.year {
-                return pair1.0.month < pair2.0.month
+                return pair1.0.month > pair2.0.month
             } else {
-                return pair1.0.year < pair2.0.year
+                return pair1.0.year > pair2.0.year
             }
         }).compactMap { monthYear, posts in
             guard monthYear.month < 13 else { return nil }
@@ -54,12 +53,12 @@ extension MonthSection {
                 return MonthDay(month: cal.month!, day: cal.day!)
             }).sorted { pair1, pair2 in
                 if pair1.0.month == pair2.0.month {
-                    return pair1.0.day < pair2.0.day
+                    return pair1.0.day > pair2.0.day
                 } else {
-                    return pair1.0.month < pair2.0.month
+                    return pair1.0.month > pair2.0.month
                 }
             }.compactMap { monthDay, posts in
-                return DaySection(dayAbbreviation: String(monthDay.day), posts: posts.sorted { $0.date < $1.date })
+                return DaySection(dayAbbreviation: String(monthDay.day), posts: posts.sorted { $0.date > $1.date })
             }
             
             return MonthSection(monthAbbreviation: months[monthYear.month - 1], days: daySections)
@@ -76,7 +75,7 @@ struct Post: Identifiable, Hashable {
 }
 
 extension Post {
-    static func createModels(n: Int = 10) -> [Post] {
+    static func createModels(n: Int = 12) -> [Post] {
         var postTitles = ["Levi Pics", "First smile", "Levi's Birth Story", "Family day out", "Weekend Hike", "Trip to Florida", "Baby Steps"]
         var loremIpsum = [
             "I'm baby meh celiac authentic wolf flannel fingerstache artisan typewriter letterpress tbh VHS. Waistcoat offal messenger bag selfies. Banjo cardigan gluten-free, umami +1 fingerstache fashion axe. Woke dreamcatcher vexillologist health goth vice.",
@@ -91,7 +90,7 @@ extension Post {
             d = date
             let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
             let text = !loremIpsum.isEmpty && num % 3 == 0 ? loremIpsum.removeFirst() : nil
-            let images: [String] = (1...10).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
+            let images: [String] = (1...14).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
            
             return Post(title: title, text: text, date: date, images: images)
         }

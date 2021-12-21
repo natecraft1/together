@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Story: View {
-    @State var monthOfPosts: [MonthSection] = MonthSection.create(n: 10)
-
+    var monthOfPosts: [MonthSection]
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 0) {
@@ -19,7 +19,7 @@ struct Story: View {
                         DaySectionView(day: day.dayAbbreviation)
                             .padding(.leading, 16)
                         ForEach(day.posts) { post in
-                            NavigationLink(destination: PostDetailView(post: post)) {                            
+                            NavigationLink(destination: PostDetailView(post: post)) {
                                 PostView(post: post, height: post.images.isEmpty ? 100 : 150)
                                     .frame(height: post.images.isEmpty ? 100 : 150)
                             }
@@ -33,6 +33,6 @@ struct Story: View {
 
 struct Story_Previews: PreviewProvider {
     static var previews: some View {
-        Story()
+        Story(monthOfPosts: MonthSection.create(n: 10))
     }
 }

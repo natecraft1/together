@@ -37,9 +37,9 @@ struct PostView: View {
                 HStack {
                     if let title = post.title {
                         Text(title)
-                            .fontWeight(Font.Weight.semibold)
-                            .font(.system(size: 16))
-                            .foregroundColor(Color.black.opacity(0.7))
+                            .fontWeight(Font.Weight.medium)
+                            .font(.system(size: 17))
+                            .foregroundColor(Color.black.opacity(0.9))
                             .padding(.leading, 3)
                     }
                     Spacer()
@@ -63,7 +63,7 @@ struct PostView: View {
                         Image(image)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: nil, height: 80, alignment: .center)
+                            .frame(width: nil, height: 90, alignment: .center)
                             .cornerRadius(6)
                             .offset(x: CGFloat(-10 * index), y: 3 * (index % 2 == 0 ? -1 : 1))
                     }

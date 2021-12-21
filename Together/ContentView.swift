@@ -9,14 +9,23 @@ import SwiftUI
 import DateHelper
 
 struct ContentView: View {
-    
+    @State var monthOfPosts: [MonthSection] = MonthSection.create(n: 12)
+    @State var isAddEntrySheetPresented = false
+
     var body: some View {
         TabView {
             NavigationView {
-                Story().tabItem {
+                Story(monthOfPosts: monthOfPosts).tabItem {
                     Text("Story")
-                }
-                .navigationBarTitle("Glass Family")
+                }.sheet(isPresented: $isAddEntrySheetPresented, onDismiss: nil, content: {
+                    AddEntryView()
+                }).navigationBarTitle("Glass Family")
+                    .navigationBarItems(trailing: Button(action: {
+                        isAddEntrySheetPresented = true
+                    }) {
+                        Text("Add Entry")
+                    })
+                
             }
         }
     }
