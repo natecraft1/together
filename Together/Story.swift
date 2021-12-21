@@ -20,8 +20,8 @@ struct Story: View {
                             .padding(.leading, 16)
                         ForEach(day.posts) { post in
                             NavigationLink(destination: PostDetailView(post: post)) {
-                                PostView(post: post, height: post.images.isEmpty ? 100 : 150)
-                                    .frame(height: post.images.isEmpty ? 100 : 150)
+                                PostView(post: post, height: post.images.isEmpty ? 120 : 180)
+                                    .frame(height: post.images.isEmpty ? 120 : 180)
                             }
                         }
                     }

@@ -76,7 +76,7 @@ struct Post: Identifiable, Hashable {
 
 extension Post {
     static func createModels(n: Int = 12) -> [Post] {
-        var postTitles = ["Levi Pics", "First smile", "Levi's Birth Story", "Family day out", "Weekend Hike", "Trip to Florida", "Baby Steps"]
+        var postTitles = ["Levi Pics", "First smile", "Levi's Birth Story", "Family day out", "Weekend Hike", "Trip to Florida", "Baby Steps", "Random Pics", "Happy Times"]
         var loremIpsum = [
             "I'm baby meh celiac authentic wolf flannel fingerstache artisan typewriter letterpress tbh VHS. Waistcoat offal messenger bag selfies. Banjo cardigan gluten-free, umami +1 fingerstache fashion axe. Woke dreamcatcher vexillologist health goth vice.",
             "Crucifix church-key kogi quinoa, twee ugh palo santo ennui distillery. Dreamcatcher echo park sartorial, vice man braid chicharrones raw denim succulents paleo keffiyeh single-origin coffee master cleanse.",
@@ -89,7 +89,7 @@ extension Post {
             let date = d.adjust(.day, offset: Int.random(in: -35 ..< 1)).adjust(.minute, offset: Int.random(in: -200...200))
             d = date
             let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
-            let text = !loremIpsum.isEmpty && num % 3 == 0 ? loremIpsum.removeFirst() : nil
+            let text = !loremIpsum.isEmpty && num % 4 == 0 ? loremIpsum.removeFirst() : nil
             let images: [String] = (1...14).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
            
             return Post(title: title, text: text, date: date, images: images)

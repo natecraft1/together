@@ -33,8 +33,9 @@ struct PostDetailView: View {
                         .font(.system(size: 13))
                         .foregroundColor(Color.black.opacity(0.9))
                         .lineLimit(nil)
+                        .padding(.top, 10)
                 }
-                Divider()
+                Divider().padding(.vertical, 10)
                 HStack {
                     Spacer()
                     Text("Comments (\(Int.random(in: 1..<7)))")
