@@ -17,7 +17,7 @@ struct Story: View {
                     MonthSectionView(month: month.monthAbbreviation)
                     ForEach(month.days) { day in
                         DaySectionView(day: day.dayAbbreviation)
-                            .padding(.leading, 16)
+                            .padding(.leading, 15)
                         ForEach(day.posts) { post in
                             NavigationLink(destination: PostDetailView(post: post)) {
                                 PostView(post: post, height: post.images.isEmpty ? 120 : 180)

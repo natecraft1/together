@@ -97,6 +97,51 @@ extension Post {
     }
 }
 
+struct FeedPost: Identifiable {
+    var id = UUID()
+    var author: String
+    var title: String?
+    var text: String?
+    var date: Date
+    var images: [String]
+}
+
+extension FeedPost {
+    static func createModels(n: Int = 12) -> [FeedPost] {
+        var postTitles = ["Levi Pics", "First smile", "Levi's Birth Story", "Family day out", "Weekend Hike", "Trip to Florida", "Baby Steps", "Random Pics", "Happy Times"]
+        var loremIpsum = [
+            "I'm baby meh celiac authentic wolf flannel fingerstache artisan typewriter letterpress tbh VHS. Waistcoat offal messenger bag selfies. Banjo cardigan gluten-free, umami +1 fingerstache fashion axe. Woke dreamcatcher vexillologist health goth vice.",
+            "Crucifix church-key kogi quinoa, twee ugh palo santo ennui distillery. Dreamcatcher echo park sartorial, vice man braid chicharrones raw denim succulents paleo keffiyeh single-origin coffee master cleanse.",
+            "Helvetica shaman 90's williamsburg tousled, post-ironic austin pabst. Four loko intelligentsia drinking vinegar craft beer. Pitchfork thundercats edison bulb lumbersexual church-key af master cleanse.",
+            "Kale chips fixie DIY street art tbh affogato asymmetrical aesthetic waistcoat cloud bread. Church-key kale chips neutra celiac art party.",
+            "Adaptogen brooklyn meh, locavore four loko schlitz thundercats coloring book four dollar toast truffaut selvage gluten-free food truck. Green juice aesthetic paleo etsy post-ironic truffaut tofu."
+        ]
+        var d = Date()
+        return (0..<n).map { num -> FeedPost in
+            let date = d.adjust(.day, offset: Int.random(in: -35 ..< 1)).adjust(.minute, offset: Int.random(in: -200...200))
+            d = date
+            let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
+            let text = !loremIpsum.isEmpty && num % 4 == 0 ? loremIpsum.removeFirst() : nil
+            let images: [String] = (1...14).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
+            let names = ["Dwangela", "Kevin and Stacy", "Jim and Pam", "Ryan and Kelly", "The Flendersons"]
+            return FeedPost(author: names[Int.random(in: 0..<names.count)], title: title, text: text, date: date, images: images)
+        }
+    }
+}
+
+
+extension Invite {
+    static func create(n: Int = 4) -> [Invite] {
+        var names = ["Dwangela", "Kevin and Stacy", "Jim and Pam", "Ryan and Kelly", "The Flendersons"]
+        var d = Date()
+        return (0..<min(n, 5)).map { _ -> Invite in
+            let date = d.adjust(.day, offset: Int.random(in: -25 ..< 0)).adjust(.minute, offset: Int.random(in: -200...200))
+            d = date
+            return Invite(name: names.removeFirst(), date: date)
+        }
+    }
+}
+
 extension Date {
     var day: Int {
         let calendarDate = Calendar.current.dateComponents([.day], from: self)

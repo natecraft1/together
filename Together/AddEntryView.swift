@@ -30,6 +30,7 @@ struct AddEntryView: View {
                 Text("Add Media")
                     .font(.system(size: 14))
                     .foregroundColor(Color.black.opacity(0.8))
+                    .padding(.bottom, 2)
                 ScrollView {
                     LazyVGrid(columns: [
                         GridItem(.flexible()),
