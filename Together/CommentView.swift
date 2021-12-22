@@ -12,11 +12,7 @@ struct CommentView: View {
     var comment: String
     var body: some View {
         HStack(alignment: .top) {
-            Image(String(Int.random(in: 1...4)))
-                .resizable()
-                .scaledToFill()
-                .frame(width: 22, height: 22, alignment: .center)
-                .cornerRadius(10)
+            IconView()
                 .offset(x: 0, y: 3)
             VStack(alignment: .leading) {
                 Text(person)
@@ -43,5 +39,15 @@ struct CommentView: View {
 struct CommentView_Previews: PreviewProvider {
     static var previews: some View {
         CommentView(person: "Dwight Schrute", comment: "Wow, looks amazing!")
+    }
+}
+
+struct IconView: View {
+    var body: some View {
+        Image(String(Int.random(in: 1...4)))
+            .resizable()
+            .scaledToFill()
+            .frame(width: 22, height: 22, alignment: .center)
+            .cornerRadius(10)
     }
 }

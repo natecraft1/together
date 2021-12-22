@@ -123,7 +123,7 @@ extension FeedPost {
             let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
             let text = !loremIpsum.isEmpty && num % 4 == 0 ? loremIpsum.removeFirst() : nil
             let images: [String] = (1...14).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
-            let names = ["Dwangela", "Kevin and Stacy", "Jim and Pam", "Ryan and Kelly", "The Flendersons"]
+            let names = ["Dwight and Angela", "Kevin and Stacy", "Jim and Pam", "Ryan and Kelly", "The Flendersons"]
             return FeedPost(author: names[Int.random(in: 0..<names.count)], title: title, text: text, date: date, images: images)
         }
     }
@@ -132,7 +132,7 @@ extension FeedPost {
 
 extension Invite {
     static func create(n: Int = 4) -> [Invite] {
-        var names = ["Dwangela", "Kevin and Stacy", "Jim and Pam", "Ryan and Kelly", "The Flendersons"]
+        var names = ["Dwight and Angela", "Kevin and Stacy", "Jim and Pam", "Ryan and Kelly", "The Flendersons"]
         var d = Date()
         return (0..<min(n, 5)).map { _ -> Invite in
             let date = d.adjust(.day, offset: Int.random(in: -25 ..< 0)).adjust(.minute, offset: Int.random(in: -200...200))

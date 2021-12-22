@@ -19,7 +19,7 @@ struct PostView: View {
         self.post = post
         self.height = height
         let minImages = post.text == nil ? min(post.images.count, 3) : 0
-        let maxImages = post.text != nil ? min(2, post.images.count) : min(4, post.images.count)
+        let maxImages = post.text != nil ? min(2, post.images.count) : min(5, post.images.count)
         self.images = Array(post.images
             .prefix(Int.random(in: minImages...maxImages)))
     }
@@ -33,51 +33,7 @@ struct PostView: View {
                 .padding(.trailing, 0)
                 .frame(width: 30, height: height)
             Spacer().frame(width: 20, height: nil, alignment: .center)
-            PostBodyView(date: post.date, title: post.title, text: post.text, images: Array(images.prefix(post.text == nil ? Int.max : 2)))
-//            VStack(alignment: .leading) {
-//                HStack {
-//                    if let title = post.title {
-//                        Text(title)
-//                            .fontWeight(Font.Weight.medium)
-//                            .font(.system(size: 17))
-//                            .foregroundColor(Color.black.opacity(0.9))
-//                            .padding(.leading, 3)
-//                    }
-//                    Spacer()
-//                    Text(post.date.toString(format: .custom("h:mm a")))
-//                        .font(.system(size: 10))
-//                        .foregroundColor(Color.gray.opacity(0.9))
-//                }
-//                HStack(alignment: .top) {
-//                    if let text = post.text {
-//                        Text(text)
-//                            .font(.system(size: 12))
-//                            .foregroundColor(Color.black.opacity(0.9))
-//                            .fixedSize(
-//                                horizontal: false,
-//                                vertical: true)
-//                            .multilineTextAlignment(.leading)
-//                            .padding(.top, 5)
-//
-//                    }
-//                    ForEach(Array(zip(images.indices, images)).prefix(post.text == nil ? Int.max : 2), id: \.0) { index, image in
-//                        Image(image)
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(width: nil, height: 90, alignment: .center)
-//                            .cornerRadius(6)
-//                            .offset(x: CGFloat(-10 * index), y: 3 * (index % 2 == 0 ? -1 : 1))
-//                    }
-//
-//                }.padding(.bottom, 10)
-//                HStack {
-//                    Spacer()
-//                    Text("Comments (\(Int.random(in: 1..<7)))")
-//                        .font(.system(size: 11))
-//                        .foregroundColor(Color.purple.opacity(0.7))
-//                        .offset(x: 0, y: -3)
-//                }
-//            }
+            PostBodyView(date: post.date, title: post.title, text: post.text, images: images, height: height)
             Spacer()
         }
     }
@@ -85,6 +41,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post.createModels(n: 1).first!, height: 150).previewLayout(.sizeThatFits)
+        PostView(post: Post.createModels(n: 1).first!, height: 180).previewLayout(.sizeThatFits)
     }
 }

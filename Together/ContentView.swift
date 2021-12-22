@@ -21,9 +21,10 @@ struct ContentView: View {
                 .navigationBarItems(trailing: Button(action: {
                     isAddEntrySheetPresented = true
                 }) {
-                    Text("Add Entry")
+                    Text("Add").foregroundColor(Color.purple)
                 })
-            }.tabItem {
+            }.navigationViewStyle(.stack)
+                .tabItem {
                 Label("Story", systemImage: "book")
             }
             NavigationView {
@@ -32,15 +33,17 @@ struct ContentView: View {
                     .navigationBarItems(trailing: Button(action: {}) {
                         Text("Invite")
                     })
-            }.tabItem {
+            }.navigationViewStyle(.stack)
+                .tabItem {
                 Label("Invites", systemImage: "mail")
             }
             
             NavigationView {
                 FeedView()
                     .navigationBarTitle("Feed")
-            }.tabItem {
-                Label("Feed", systemImage: "people")
+            }.navigationViewStyle(.stack)
+            .tabItem {
+                Label("Feed", systemImage: "person.2.fill")
             }
         }
     }

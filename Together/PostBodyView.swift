@@ -12,6 +12,7 @@ struct PostBodyView: View {
     var title: String?
     var text: String?
     var images: [String]
+    var height: CGFloat
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,7 +20,7 @@ struct PostBodyView: View {
                 if let title = title {
                     Text(title)
                         .fontWeight(Font.Weight.medium)
-                        .font(.system(size: 17))
+                        .font(.system(size: 18))
                         .foregroundColor(Color.black.opacity(0.9))
                         .padding(.leading, 3)
                 }
@@ -28,7 +29,7 @@ struct PostBodyView: View {
                     .foregroundColor(Color.gray.opacity(0.9))
                 Spacer()
             }
-            HStack(alignment: .top) {
+            HStack {
                 if let text = text {
                     Text(text)
                         .font(.system(size: 12))
@@ -38,6 +39,7 @@ struct PostBodyView: View {
                             vertical: true)
                         .multilineTextAlignment(.leading)
                         .padding(.top, 5)
+//                        .frame(width: nil, height: height)
                         
                 }
                 ForEach(Array(zip(images.indices, images)), id: \.0) { index, image in
@@ -55,14 +57,14 @@ struct PostBodyView: View {
                 Text("Comments (\(Int.random(in: 1..<7)))")
                     .font(.system(size: 11))
                     .foregroundColor(Color.purple.opacity(0.7))
-                    .offset(x: 0, y: -3)
+                    .offset(x: -5, y: -3)
             }
         }
     }
 }
 
-//struct PostBodyView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PostBodyView()
-//    }
-//}
+struct PostBodyView_Previews: PreviewProvider {
+    static var previews: some View {
+        PostBodyView(date: Date(), title: "Hello world", text: "lorem ipsum", images: ["1", "2", "3"], height: 180)
+    }
+}
