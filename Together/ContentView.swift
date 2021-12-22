@@ -27,6 +27,16 @@ struct ContentView: View {
                 .tabItem {
                 Label("Story", systemImage: "book")
             }
+           
+            
+            NavigationView {
+                FeedView()
+                    .navigationBarTitle("Feed")
+            }.navigationViewStyle(.stack)
+            .tabItem {
+                Label("Feed", systemImage: "person.2.fill")
+            }
+            
             NavigationView {
                 InvitesView()
                     .navigationBarTitle("Pending Invites")
@@ -36,14 +46,6 @@ struct ContentView: View {
             }.navigationViewStyle(.stack)
                 .tabItem {
                 Label("Invites", systemImage: "mail")
-            }
-            
-            NavigationView {
-                FeedView()
-                    .navigationBarTitle("Feed")
-            }.navigationViewStyle(.stack)
-            .tabItem {
-                Label("Feed", systemImage: "person.2.fill")
             }
         }
     }

@@ -32,23 +32,24 @@ struct PostBodyView: View {
             HStack {
                 if let text = text {
                     Text(text)
-                        .font(.system(size: 12))
+                        .font(.system(size: 13))
                         .foregroundColor(Color.black.opacity(0.9))
                         .fixedSize(
                             horizontal: false,
                             vertical: true)
                         .multilineTextAlignment(.leading)
+                        .lineLimit(9)
                         .padding(.top, 5)
-//                        .frame(width: nil, height: height)
+                        .padding(.trailing, 4)
                         
                 }
                 ForEach(Array(zip(images.indices, images)), id: \.0) { index, image in
                     Image(image)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: nil, height: 90, alignment: .center)
+                        .frame(width: nil, height: text == nil ? 105 : 90, alignment: .center)
                         .cornerRadius(6)
-                        .offset(x: CGFloat(-10 * index), y: 3 * (index % 2 == 0 ? -1 : 1))
+                        .offset(x: CGFloat(-10 * index), y: (text == nil ? 3 : 5) * (index % 2 == 0 ? -1 : 1))
                 }
                
             }.padding(.bottom, 10)
@@ -57,7 +58,7 @@ struct PostBodyView: View {
                 Text("Comments (\(Int.random(in: 1..<7)))")
                     .font(.system(size: 11))
                     .foregroundColor(Color.purple.opacity(0.7))
-                    .offset(x: -5, y: -3)
+                    .offset(x: -8, y: -4)
             }
         }
     }

@@ -16,14 +16,14 @@ struct MonthSectionView: View {
 //                    .fontWeight(.medium)
                     .font(.system(size: 14))
                     .foregroundColor(Color.black.opacity(0.7))
-                    .padding(.leading, 18)
+                    .padding(.leading, 14)
                     .padding(.top, 5)
                 Spacer()
             }
             Rectangle()
                 .size(width: 1, height: 10)
                 .fill(Color.purple.opacity(0.4))
-                .padding(.leading, 30)
+                .padding(.leading, 26)
         }
         
     }

@@ -7,23 +7,37 @@
 
 import SwiftUI
 
+struct CoupleView: View {
+    var name: String
+    var body: some View {
+        HStack {
+            IconView()
+                .offset(x: 0, y: -2)
+                .padding(.trailing, 4)
+            Text(name)
+                .font(.system(size: 19))
+                .foregroundColor(Color.black.opacity(0.8))
+                .padding(.bottom, 6)
+            Spacer()
+        }
+    }
+}
+
 struct FeedView: View {
     @State var feedItems = FeedPost.createModels()
+    @State var monthOfPosts: [MonthSection] = MonthSection.create(n: 12)
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 ForEach(feedItems) { item in
                     VStack(alignment: .leading) {
-                        HStack {
-                            IconView()
-                                .offset(x: 0, y: -2)
-                                .padding(.trailing, 4)
-                            Text(item.author)
-                                .font(.system(size: 19))
-                                .foregroundColor(Color.black.opacity(0.8))
-                                .padding(.bottom, 6)
-                            Spacer()
-                        }
+                        NavigationLink(
+                            destination:
+                                Story(monthOfPosts: monthOfPosts)
+                                .navigationBarTitle(item.author))
+                            {
+                                CoupleView(name: item.author)
+                            }
                         PostBodyView(
                             date: item.date,
                             title: item.title,

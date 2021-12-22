@@ -19,7 +19,7 @@ struct PostView: View {
         self.post = post
         self.height = height
         let minImages = post.text == nil ? min(post.images.count, 3) : 0
-        let maxImages = post.text != nil ? min(2, post.images.count) : min(5, post.images.count)
+        let maxImages = post.text != nil ? min(2, post.images.count) : min(4, post.images.count)
         self.images = Array(post.images
             .prefix(Int.random(in: minImages...maxImages)))
     }
@@ -29,7 +29,7 @@ struct PostView: View {
             Rectangle()
                 .size(width: 1, height: height)
                 .fill(Color.purple.opacity(0.4))
-                .padding(.leading, 30)
+                .padding(.leading, 26)
                 .padding(.trailing, 0)
                 .frame(width: 30, height: height)
             Spacer().frame(width: 20, height: nil, alignment: .center)
