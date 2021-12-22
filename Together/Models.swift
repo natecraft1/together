@@ -90,7 +90,7 @@ extension Post {
             d = date
             let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
             let text = !loremIpsum.isEmpty && num % 4 == 0 ? loremIpsum.removeFirst() : nil
-            let images: [String] = (1...14).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
+            let images: [String] = (1...19).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
            
             return Post(title: title, text: text, date: date, images: images)
         }
@@ -122,7 +122,7 @@ extension FeedPost {
             d = date
             let title = num % 3 == 0 ? nil : (postTitles.isEmpty ? nil : postTitles.removeFirst())
             let text = !loremIpsum.isEmpty && num % 4 == 0 ? loremIpsum.removeFirst() : nil
-            let images: [String] = (1...14).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
+            let images: [String] = (1...19).map { $0 }.shuffled().prefix(Int.random(in: 4...7)).map(String.init)
             let names = ["Dwight and Angela", "Kevin and Stacy", "Jim and Pam", "Ryan and Kelly", "The Flendersons", "Michael and Holly", "Andy and Erin"]
             return FeedPost(author: names[Int.random(in: 0..<names.count)], title: title, text: text, date: date, images: images)
         }

@@ -11,7 +11,7 @@ struct PostDetailView: View {
     var post: Post
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             if let title = post.title, !title.isEmpty {
                 PostDetailMainView(post: post)
                     .navigationBarTitle(title)

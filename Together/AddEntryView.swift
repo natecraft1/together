@@ -26,7 +26,7 @@ struct AddEntryView: View {
                     Button(action: {
                         isEntry = true
                     }) {
-                        Label("Entry", systemImage: "pencil")
+                        Label("Entry", systemImage: "book")
                             .foregroundColor(!isEntry ? Color.gray : Color.purple.opacity(0.8))
                     }
                     Text(" | ").foregroundColor(Color.gray)
@@ -34,11 +34,10 @@ struct AddEntryView: View {
                         print("called")
                         isEntry = false
                     }) {
-                        Label("Status", systemImage: "eye")
+                        Label("Status", systemImage: "pencil")
                             .foregroundColor(isEntry ? Color.gray : Color.purple.opacity(0.8))
                     }
                 }.padding(.bottom, 20)
-//                    .offset(x: 0, y: -15)
                 if isEntry {
                     TextField("Entry Title (Optional)", text: $title)
                     Divider()
@@ -62,12 +61,12 @@ struct AddEntryView: View {
                 .navigationBarItems(leading: Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Cancel")
+                    Text("Cancel").foregroundColor(Color.purple.opacity(0.8))
                 },
                     trailing: Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Save")
+                    Text("Save").foregroundColor(Color.purple.opacity(0.8))
                 })
         }
     }
@@ -80,7 +79,7 @@ struct AddMediaToEntryView: View {
             Text("Add Media")
                 .font(.system(size: 14))
                 .foregroundColor(Color.black.opacity(0.8))
-                .padding(.bottom, 2)
+                .padding(.vertical, 3)
             ScrollView {
                 LazyVGrid(columns: [
                     GridItem(.flexible()),
@@ -91,7 +90,7 @@ struct AddMediaToEntryView: View {
                 ], alignment: .leading, spacing: 4) {
                     ForEach(imageModels) { model in
                         ZStack(alignment: .bottomTrailing) {
-                            Image(String((model.n % 14) + 1))
+                            Image(String((model.n % 19) + 1))
                                 .resizable()
                                 .scaleEffect(model.isSelected ? 1.04 : 1)
                                 .scaledToFill()
@@ -107,7 +106,14 @@ struct AddMediaToEntryView: View {
                                     .padding(.bottom, 3)
                                     .scaleEffect(model.isSelected ? 1 : 0.7)
                                     .opacity(model.isSelected ? 1 : 0)
-                                
+                            Image(systemName: "checkmark")
+                                .resizable()
+                                .foregroundColor(Color.white)
+                                .frame(width: 9, height: 9)
+                                .padding(.trailing, 7)
+                                .padding(.bottom, 7)
+                                .scaleEffect(model.isSelected ? 1 : 0.7)
+                                .opacity(model.isSelected ? 1 : 0)
                             
                         }
                     }
