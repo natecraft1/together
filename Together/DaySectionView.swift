@@ -17,7 +17,7 @@ struct DaySectionView: View {
                 Text(day)
                     .fontWeight(.medium)
                     .font(.system(size: 13))
-                    .foregroundColor(Color.black.opacity(0.6))
+                    .foregroundColor(Color.black.opacity(0.7))
             }.frame(width: 30, height: 30, alignment: .center)
             Spacer()
         }
