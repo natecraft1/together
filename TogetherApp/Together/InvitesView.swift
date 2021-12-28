@@ -5,17 +5,9 @@
 //  Created by Nathan Glass on 12/21/21.
 //
 
+import Models
 import SwiftUI
 import DateHelper
-
-struct Invite: Identifiable, Equatable {
-    var id = UUID()
-    var name: String
-    var date: Date
-    var relativeTime: String {
-        date.toStringWithRelativeTime()
-    }
-}
 
 struct InvitesView: View {
     @State var invites: [Invite] = Invite.create()

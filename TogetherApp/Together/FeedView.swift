@@ -5,6 +5,7 @@
 //  Created by Nathan Glass on 12/21/21.
 //
 
+import Models
 import SwiftUI
 
 struct CoupleView: View {

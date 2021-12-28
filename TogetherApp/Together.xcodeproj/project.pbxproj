@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0C5F66277AA67F009CB3E8 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0C5F65277AA67F009CB3E8 /* Models */; };
 		0B9D2DF7277980A300C64671 /* TogetherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2DF6277980A300C64671 /* TogetherApp.swift */; };
 		0B9D2DFB277980A400C64671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9D2DFA277980A400C64671 /* Assets.xcassets */; };
 		0B9D2DFE277980A400C64671 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9D2DFD277980A400C64671 /* Preview Assets.xcassets */; };
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B0C5F66277AA67F009CB3E8 /* Models in Frameworks */,
 				0B9D2E222779812800C64671 /* DateHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +102,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B0C5F64277AA67F009CB3E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0B9D2DEA277980A300C64671 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +117,7 @@
 				0B9D2E06277980A500C64671 /* TogetherTests */,
 				0B9D2E10277980A500C64671 /* TogetherUITests */,
 				0B9D2DF4277980A300C64671 /* Products */,
+				0B0C5F64277AA67F009CB3E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +198,7 @@
 			name = Together;
 			packageProductDependencies = (
 				0B9D2E212779812800C64671 /* DateHelper */,
+				0B0C5F65277AA67F009CB3E8 /* Models */,
 			);
 			productName = Together;
 			productReference = 0B9D2DF3277980A300C64671 /* Together.app */;
@@ -680,6 +691,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0B0C5F65277AA67F009CB3E8 /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
 		0B9D2E212779812800C64671 /* DateHelper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B9D2E202779812700C64671 /* XCRemoteSwiftPackageReference "DateHelper" */;

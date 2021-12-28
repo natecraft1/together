@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Models
 
 struct PostDetailView: View {
     var post: Post
