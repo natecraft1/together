@@ -48,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0C5F63277A93A0009CB3E8 /* Together */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Together; path = ..; sourceTree = "<group>"; };
 		0B9D2DF3277980A300C64671 /* Together.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Together.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9D2DF6277980A300C64671 /* TogetherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogetherApp.swift; sourceTree = "<group>"; };
 		0B9D2DFA277980A400C64671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				0B9D2DF5277980A300C64671 /* Together */,
+				0B0C5F63277A93A0009CB3E8 /* Together */,
 				0B9D2E06277980A500C64671 /* TogetherTests */,
 				0B9D2E10277980A500C64671 /* TogetherUITests */,
 				0B9D2DF4277980A300C64671 /* Products */,
