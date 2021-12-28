@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Models
+import PostDetail
 
 struct Story: View {
     var monthOfPosts: [MonthSection]

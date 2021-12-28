@@ -5,12 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "Together",
-    platforms: [.iOS(.v11), .macOS(.v10_13),],
+    platforms: [.iOS(.v14), .macOS(.v10_13),],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Models",
             targets: ["Models"]),
+        .library(
+            name: "PostDetail",
+            targets: ["PostDetail"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -27,5 +30,11 @@ let package = Package(
 //        .testTarget(
 //            name: "TogetherTests",
 //            dependencies: ["Together"]),
+            .target(
+                name: "PostDetail",
+                dependencies: [
+                    "Models"
+                ]
+            )
     ]
 )
