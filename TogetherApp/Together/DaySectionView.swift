@@ -13,7 +13,8 @@ struct DaySectionView: View {
         HStack {
             ZStack {
                 Circle()
-                    .stroke(Color.purple.opacity(0.6), lineWidth: 1)
+                    .stroke(Color.purple.opacity(0.01), lineWidth: 1)
+                    .shadow(color: Color.purple.opacity(0.4), radius: 1, x: 0, y: 0)
                 Text(day)
                     .fontWeight(.medium)
                     .font(.system(size: 13))

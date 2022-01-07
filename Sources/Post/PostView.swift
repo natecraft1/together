@@ -8,12 +8,14 @@
 import Models
 import SwiftUI
 import DateHelper
+import PostBody
 
-struct PostView: View {
-    var post: Post
-    var height: CGFloat
+public struct PostView: View {
+    private var post: Post
+    private var height: CGFloat
     private let images: [String]
-    init(
+    
+    public init(
         post: Post,
         height: CGFloat
     ) {
@@ -25,7 +27,7 @@ struct PostView: View {
             .prefix(Int.random(in: minImages...maxImages)))
     }
 
-    var body: some View {
+    public var body: some View {
         HStack {
             Rectangle()
                 .size(width: 1, height: height)
@@ -34,7 +36,7 @@ struct PostView: View {
                 .padding(.trailing, 0)
                 .frame(width: 30, height: height)
             Spacer().frame(width: 20, height: nil, alignment: .center)
-            PostBodyView(date: post.date, title: post.title, text: post.text, images: images, height: height)
+            PostBodyView(date: post.date, title: post.title, text: post.text, images: images).fixedSize(horizontal: false, vertical: true)
             Spacer()
         }
     }

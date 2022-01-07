@@ -4,17 +4,28 @@
 //
 //  Created by Nathan Glass on 12/21/21.
 //
-
+import DateHelper
 import SwiftUI
 
-struct PostBodyView: View {
-    var date: Date
-    var title: String?
-    var text: String?
-    var images: [String]
-    var height: CGFloat
+public struct PostBodyView: View {
+    private var date: Date
+    private var title: String?
+    private var text: String?
+    private var images: [String]
     
-    var body: some View {
+    public init(
+        date: Date,
+        title: String?,
+        text: String?,
+        images: [String]
+    ) {
+        self.date = date
+        self.title = title
+        self.text = text
+        self.images = images
+    }
+
+    public var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 if let title = title {
@@ -34,14 +45,14 @@ struct PostBodyView: View {
                     Text(text)
                         .font(.system(size: 13))
                         .foregroundColor(Color.black.opacity(0.9))
-                        .fixedSize(
-                            horizontal: false,
-                            vertical: true)
+//                        .fixedSize(
+//                            horizontal: false,
+//                            vertical: true)
                         .multilineTextAlignment(.leading)
-                        .lineLimit(9)
+                        .lineLimit(nil)
                         .padding(.top, 5)
                         .padding(.trailing, 4)
-                        
+
                 }
                 ForEach(Array(zip(images.indices, images)), id: \.0) { index, image in
                     Image(image)
@@ -51,7 +62,7 @@ struct PostBodyView: View {
                         .cornerRadius(6)
                         .offset(x: CGFloat(-10 * index), y: (text == nil ? 3 : 5) * (index % 2 == 0 ? -1 : 1))
                 }
-               
+
             }.padding(.bottom, 10)
             HStack {
                 Spacer()
@@ -66,6 +77,6 @@ struct PostBodyView: View {
 
 struct PostBodyView_Previews: PreviewProvider {
     static var previews: some View {
-        PostBodyView(date: Date(), title: "Hello world", text: "lorem ipsum", images: ["1", "2", "3"], height: 180)
+        PostBodyView(date: Date(), title: "Hello world", text: "lorem ipsum", images: ["1", "2", "3"])
     }
 }

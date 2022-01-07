@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B0C5F66277AA67F009CB3E8 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0C5F65277AA67F009CB3E8 /* Models */; };
 		0B0C5F68277ADC29009CB3E8 /* PostDetail in Frameworks */ = {isa = PBXBuildFile; productRef = 0B0C5F67277ADC29009CB3E8 /* PostDetail */; };
+		0B9BE3042787F1A300328699 /* Post in Frameworks */ = {isa = PBXBuildFile; productRef = 0B9BE3032787F1A300328699 /* Post */; };
 		0B9D2DF7277980A300C64671 /* TogetherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2DF6277980A300C64671 /* TogetherApp.swift */; };
 		0B9D2DFB277980A400C64671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9D2DFA277980A400C64671 /* Assets.xcassets */; };
 		0B9D2DFE277980A400C64671 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9D2DFD277980A400C64671 /* Preview Assets.xcassets */; };
@@ -22,9 +23,7 @@
 		0B9D2E342779819200C64671 /* DaySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2E262779819200C64671 /* DaySectionView.swift */; };
 		0B9D2E352779819200C64671 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 0B9D2E272779819200C64671 /* Preview Content */; };
 		0B9D2E362779819200C64671 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2E282779819200C64671 /* Story.swift */; };
-		0B9D2E372779819200C64671 /* PostBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2E292779819200C64671 /* PostBodyView.swift */; };
 		0B9D2E382779819200C64671 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2E2A2779819200C64671 /* CommentView.swift */; };
-		0B9D2E392779819200C64671 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2E2B2779819200C64671 /* PostView.swift */; };
 		0B9D2E3A2779819200C64671 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2E2C2779819200C64671 /* FeedView.swift */; };
 		0B9D2E3B2779819200C64671 /* MonthSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D2E2D2779819200C64671 /* MonthSectionView.swift */; };
 		0B9D2E3C2779819200C64671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9D2E2E2779819200C64671 /* Assets.xcassets */; };
@@ -66,9 +65,7 @@
 		0B9D2E262779819200C64671 /* DaySectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySectionView.swift; sourceTree = "<group>"; };
 		0B9D2E272779819200C64671 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		0B9D2E282779819200C64671 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
-		0B9D2E292779819200C64671 /* PostBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostBodyView.swift; sourceTree = "<group>"; };
 		0B9D2E2A2779819200C64671 /* CommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
-		0B9D2E2B2779819200C64671 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		0B9D2E2C2779819200C64671 /* FeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		0B9D2E2D2779819200C64671 /* MonthSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthSectionView.swift; sourceTree = "<group>"; };
 		0B9D2E2E2779819200C64671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +80,7 @@
 			files = (
 				0B0C5F66277AA67F009CB3E8 /* Models in Frameworks */,
 				0B0C5F68277ADC29009CB3E8 /* PostDetail in Frameworks */,
+				0B9BE3042787F1A300328699 /* Post in Frameworks */,
 				0B9D2E222779812800C64671 /* DateHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,9 +143,7 @@
 				0B9D2E252779819200C64671 /* InvitesView.swift */,
 				0B9D2E2F2779819200C64671 /* Models.swift */,
 				0B9D2E2D2779819200C64671 /* MonthSectionView.swift */,
-				0B9D2E292779819200C64671 /* PostBodyView.swift */,
 				0B9D2E302779819200C64671 /* PostDetailView.swift */,
-				0B9D2E2B2779819200C64671 /* PostView.swift */,
 				0B9D2E272779819200C64671 /* Preview Content */,
 				0B9D2E282779819200C64671 /* Story.swift */,
 				0B9D2DF6277980A300C64671 /* TogetherApp.swift */,
@@ -202,6 +198,7 @@
 				0B9D2E212779812800C64671 /* DateHelper */,
 				0B0C5F65277AA67F009CB3E8 /* Models */,
 				0B0C5F67277ADC29009CB3E8 /* PostDetail */,
+				0B9BE3032787F1A300328699 /* Post */,
 			);
 			productName = Together;
 			productReference = 0B9D2DF3277980A300C64671 /* Together.app */;
@@ -331,9 +328,7 @@
 				0B9D2E332779819200C64671 /* InvitesView.swift in Sources */,
 				0B9D2E312779819200C64671 /* AddEntryView.swift in Sources */,
 				0B9D2E3E2779819200C64671 /* PostDetailView.swift in Sources */,
-				0B9D2E372779819200C64671 /* PostBodyView.swift in Sources */,
 				0B9D2E322779819200C64671 /* ContentView.swift in Sources */,
-				0B9D2E392779819200C64671 /* PostView.swift in Sources */,
 				0B9D2E362779819200C64671 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +696,10 @@
 		0B0C5F67277ADC29009CB3E8 /* PostDetail */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PostDetail;
+		};
+		0B9BE3032787F1A300328699 /* Post */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Post;
 		};
 		0B9D2E212779812800C64671 /* DateHelper */ = {
 			isa = XCSwiftPackageProductDependency;

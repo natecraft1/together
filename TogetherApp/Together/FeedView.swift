@@ -6,6 +6,7 @@
 //
 
 import Models
+import PostBody
 import SwiftUI
 
 struct CoupleView: View {
@@ -43,11 +44,11 @@ struct FeedView: View {
                             date: item.date,
                             title: item.title,
                             text: item.text,
-                            images: Array(item.images.prefix(item.text == nil ? 4 : 2)),
-                            height: item.images.isEmpty ? 180 : 240
+                            images: Array(item.images.prefix(item.text == nil ? 4 : 2))
+//                            height: item.images.isEmpty ? 180 : 240
                         )
                     }
-                    .frame(height: item.images.isEmpty ? 180 : 240)
+//                    .frame(height: item.images.isEmpty ? 180 : 240)
                     Divider()
                 }
             }
